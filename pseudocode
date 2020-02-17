@@ -1,0 +1,35 @@
+
+//HTML
+// create 18 buttons 
+//  Numbers 0-9
+//  'AC', 'CE', plus/minus/division/multiplication
+//  decimal '.'
+//  equals/enter button
+
+// JS
+// init array for entries
+// init total = 0
+// var temp for temporary storage of input
+
+// on button click, set a variable = buttons text value
+// check the button input 
+// if is not NaN or is a decimal
+    // add to the temp array 
+    // answer is first ten figures of the returned calculation (so can be displayed on screen)
+// If val == 'AC'
+    // Resert the initial array, total to zero, temp string to empty.
+    // answer is 0
+// If val == 'CE'
+    // Reset the temp value
+// If  val is multiplication operator ('x')
+    // push the temp value (first number to multiply) and the * operator to the entries array
+    // reset temp to ''
+// If val is division operator 't'
+    // push temp value and / operator to entries array
+    // reset temp to empty string
+// else if is equals sign - push it to the entries
+    // iterate over the entries array
+    // get the next item (array[i+1])
+    // do the calculation denoted by the symbol
+    // then minus swapped out by using Math.abs() (absolute value)
+// Else push the temp string and button value to entries array, reset temp to ''

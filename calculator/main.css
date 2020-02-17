@@ -1,0 +1,150 @@
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root{
+  --bakelite: #555;
+  --screen: #333;
+  --bg-dark: #222;
+  --mountain-dont: #ffcd70f5;
+  --chalk: #bbb;
+  --matrix: #59ff7548;
+  --actual-crimson: #7e001b;
+  --yell: #222;
+  --dyell: #222;
+
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.calculator {
+  border: 1px solid var(--chalk);
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: var(--bg-dark);
+}
+.logo{
+  margin: 5px 10px 5px 10px;
+  font-weight: lighter;
+  color: var(--bakelite);
+}
+.screen {
+  width: 100%;
+  font-size: 5rem;
+  height: 80px;
+  border: none;
+  background-color: var(--screen);
+  color: var(--matrix);
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+
+.keyboard {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+button {
+  height: 60px;
+  color: var(--chalk);
+  background-color: var(--bg-dark);
+  border-radius: 5px;
+  border-color: var(--screen);
+  font-size: 2rem;
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
+button:hover{
+  border: 1px solid var(--screen);
+}
+
+.clear {
+  color: var(--actual-crimson);
+}
+.clear:hover {
+  background-color: var(--actual-crimson);
+  border: 1px solid var(--actual-crimson);
+  color: lightcoral;
+}
+.equals {
+  grid-row: 5/6;
+  grid-column: 3/4;
+  background-color: var(--screen); 
+  border-color: var(--bakelite);
+  color: var(--bg-dark);
+}
+.equals:hover {
+  background-color: var(--bakelite);
+}
+.add {
+  font-size: 3em;
+  color: seagreen;
+  background-color: var(--bg-dark);
+  grid-row: 4/6;
+  grid-column: 4/5;
+  height: 100%;
+}
+.add:hover {
+  color: var(--bg-dark);
+  background-color: seagreen;
+}
+.subtract {
+  grid-row: 3/4;
+  grid-column: 4/5;
+  font-size: 3em;
+  color: royalblue;
+}
+.subtract:hover{
+  color: var(--bg-dark);
+  background-color: royalblue;
+}
+.multiply {
+  grid-row: 2/3;
+  grid-column: 4/5;
+  font-size: 3em;
+  color: darkorange; 
+  background-color: var(--bg-dark);
+}
+.multiply:hover{
+  color: var(--bg-dark);
+  background-color: darkorange;
+}
+.divide{
+  grid-row: 1/2;
+  grid-column: 4/5;
+  font-size: 3em;
+  color: mediumslateblue;
+  background-color: var(--bg-dark);
+}
+.divide:hover{
+  color: var(--bg-dark);
+  background-color: mediumslateblue;
+}
+.none{
+  background-color: transparent;
+  color: transparent;
+  border: none;
+}
+.none:hover {
+  border: none;
+}
