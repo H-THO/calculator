@@ -6,6 +6,7 @@ let newAns = false
 
 // MAIN
 // Kick it offffffff
+console.log('about to listen')
 listening()
 
 // FUNCTIONS
@@ -18,30 +19,34 @@ function listening () {
 function getInput () {
   const buttonVal = event.target.value
   console.log('Button clicked:', buttonVal)
-  switch (buttonVal) {
-    case (!isNaN(buttonVal) || '.'):
-      console.log(`doNum(buttonVal) - buttonval: ${buttonVal}`)
-      doNum(buttonVal)
-      break
-    case 'AC':
-      console.log(`AC - buttonval: ${buttonVal}`)
-      clear(true)
-      break
-    case 'CE':
-      console.log(`CE - buttonval: ${buttonVal}`)
-      clear(false)
-      break
-    case '=':
-      console.log(`Calculating: ${buttonVal}`)
-      calculateExp()
-      break
-    default:
-      console.log(`Default: ${buttonVal}`)
-      storeNum(buttonVal)
+  console.log('ButtonVal is a Number?', !isNaN(buttonVal))
+
+  if (!isNaN(buttonVal) || buttonVal.includes('.')) {
+    doNum(buttonVal)
+    console.log(`doNum(buttonVal) - buttonval: ${buttonVal}`)
+  } else {
+    switch (buttonVal) {
+      case 'AC':
+        console.log(`AC - buttonval: ${buttonVal}`)
+        clear(true)
+        break
+      case 'CE':
+        console.log(`CE - buttonval: ${buttonVal}`)
+        clear(false)
+        break
+      case '=':
+        console.log(`Calculating: ${buttonVal}`)
+        calculateExp()
+        break
+      default:
+        console.log(`Default: ${buttonVal}`)
+        storeNum(buttonVal)
+    }
   }
 }
 // do stuff with actual numbers
 function doNum (input) {
+  console.log(`DO: doNum(${input})`)
   // if input = '.' and numstring includes decimal already - IGNORE IT
   if (nums.includes('.') && input === '.') {
     console.log('Ignoring second decimal point in button input')
@@ -62,6 +67,7 @@ function doNum (input) {
 function calculateExp () {
   // push the nums string to the expression array
   expArr.push(nums)
+  console.log('Calculating exp:\n', `nums: ${nums} \nexpArray: ${expArr}`)
   // iterate over the array & evaluate
   let tempNum = Number(expArr[0]) // temp holder for the current number
   for (let i = 0; i < expArr.length; i++) {
@@ -92,6 +98,7 @@ function calculateExp () {
 }
 // Store numbers while we are getting button input, before user presses '='
 function storeNum (num) {
+  console.log(`Storing Number: ${num}`)
   if (nums === '') {
     if (expArr.length === 0) { // Will escape out if the array is 0 (can't reduce length of array otherwise)
       return
