@@ -15,7 +15,8 @@
     </div>
       <input class="screen" type="text" id="display" value="0">
       <div class="keyboard">
-        <button class="none"></button>
+        <audio id="woof" src="media/woof.mp3" preload="auto"></audio>
+        <button id="woof" class="woof" onclick="document.getElementById('woof').play();">🐕</button>
         <button type="button" class="clear" id="clear" value="CE">CE</button>
         <button type="button" class="clear" id="clear" value="AC">AC</button>
 
